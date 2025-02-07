@@ -35,20 +35,25 @@ yesBtn.addEventListener("click", () => {
     bgMusic.play();
 });
 
-// Make the No button move randomly on hover
-noBtn.addEventListener("mouseover", () => {
-    const wrapper = document.querySelector(".wrapper");
-    const wrapperRect = wrapper.getBoundingClientRect();
-    const noBtnRect = noBtn.getBoundingClientRect();
+// Function to move the No button randomly
+function moveNoButton() {
+  const wrapper = document.querySelector(".wrapper");
+  const wrapperRect = wrapper.getBoundingClientRect();
+  const noBtnRect = noBtn.getBoundingClientRect();
 
-    // Calculate max positions to ensure the button stays within the wrapper
-    const maxX = wrapperRect.width - noBtnRect.width;
-    const maxY = wrapperRect.height - noBtnRect.height;
+  // Calculate max positions to ensure the button stays within the wrapper
+  const maxX = wrapperRect.width - noBtnRect.width;
+  const maxY = wrapperRect.height - noBtnRect.height;
 
-    // Ensure randomX and randomY are within the wrapper bounds
-    const randomX = Math.min(Math.floor(Math.random() * maxX), maxX);
-    const randomY = Math.min(Math.floor(Math.random() * maxY), maxY);
+  // Ensure randomX and randomY are within the wrapper bounds
+  const randomX = Math.min(Math.floor(Math.random() * maxX), maxX);
+  const randomY = Math.min(Math.floor(Math.random() * maxY), maxY);
 
-    noBtn.style.left = randomX + "px";
-    noBtn.style.top = randomY + "px";
-});
+  noBtn.style.position = "absolute"; // Ensure the button can move freely
+  noBtn.style.left = randomX + "px";
+  noBtn.style.top = randomY + "px";
+}
+
+// Add event listeners for both mouseover (desktop) and touchstart (mobile)
+noBtn.addEventListener("mouseover", moveNoButton);
+noBtn.addEventListener("touchstart", moveNoButton);
