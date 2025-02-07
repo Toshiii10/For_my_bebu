@@ -3,7 +3,7 @@ const noBtn = document.querySelector(".no-btn");
 const question = document.querySelector(".question");
 const gif = document.querySelector(".gif");
 const bgMusic = document.getElementById("bg-music");
-const chorusStartTime = 30; // Change this to the actual chorus start time in seconds
+const chorusStartTime = 47; // Change this to the actual chorus start time in seconds
 
 // Function to play background music
 function playMusic() {
@@ -18,21 +18,21 @@ window.addEventListener('click', playMusic); // This ensures it plays when the p
 
 // Change text and gif when the Yes button is clicked
 yesBtn.addEventListener("click", () => {
-    question.innerHTML = "Being with you is my biggest blessing. I love you so much lalove^-^ ";
-    gif.src = "https://tenor.com/view/bubu-bubu-dudu-love-cute-panda-gif-10802104815768868113.gif";
+  question.innerHTML = "Being with you is my biggest blessing. I love you so much lalove^-^ ";
+  gif.src = "https://tenor.com/view/bubu-bubu-dudu-love-cute-panda-gif-10802104815768868113.gif";
 
-    // Hide the No button
-    noBtn.style.display = "none";
+  // Hide the No button
+  noBtn.style.display = "none";
 
-    const caption = document.createElement("p");
-    caption.innerHTML = "Meet me at 8 am on February 12 in front of WCC</b> ❤️";
-    caption.style.fontSize = "18px";
-    caption.style.color = "blue";
-    caption.style.marginTop = "15px";
+  const caption = document.createElement("p");
+  caption.innerHTML = "Meet me at 8 am on February 12 in front of WCC</b> ❤️";
+  caption.style.fontSize = "18px";
+  caption.style.color = "blue";
+  caption.style.marginTop = "15px";
 
-    document.querySelector(".wrapper").appendChild(caption);
-    bgMusic.currentTime = chorusStartTime; // Jump to the chorus
-    bgMusic.play();
+  document.querySelector(".wrapper").appendChild(caption);
+  bgMusic.currentTime = chorusStartTime; // Jump to the chorus
+  bgMusic.play();
 });
 
 // Function to move the No button randomly
